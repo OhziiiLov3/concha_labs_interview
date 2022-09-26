@@ -30,12 +30,12 @@ def show(request):
 
 
 def edit(request, id):
-    account = UserAccount.objects.get(pk=id)
+    account = UserAccount.objects.get(id=id)
     return render(request, 'edit.html', {'account': account})
 
 
 def update(request, id):
-    account = UserAccount.objects.get(pk=id)
+    account = UserAccount.objects.get(id=id)
     form = AccountForm(request.POST, instance=account)
     if form.is_valid():
         form.save()
@@ -44,7 +44,7 @@ def update(request, id):
 
 
 def destroy(request, id):
-    account = UserAccount.objects.get(pk=id)
+    account = UserAccount.objects.get(id=id)
     account.delete()
     return redirect("/show")
 
