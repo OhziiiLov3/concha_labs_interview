@@ -71,7 +71,7 @@ def audio(request):
         if form.is_valid():
             try:
                 form.save()
-                return redirect('/audio')
+                return redirect('/show/audio')
             except:
                 pass
     else:
