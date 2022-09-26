@@ -9,7 +9,7 @@ from django.contrib.postgres.fields import JSONField
 # Create User Account Model , Django adds user Id Automatically for us 
 
 class UserAccount(models.Model):
-    userId = models.PositiveIntegerField(default=0)
+    userId = models.CharField(max_length=20)
     name = models.CharField(max_length=150)
     email = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
