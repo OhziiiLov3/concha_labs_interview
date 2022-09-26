@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+    <form method="POST" class="post-form" action="/show/audio">
+        {% csrf_token %} {{form.errors}}
+        <div class="container">
+            <br>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <h3>Enter Details</h3>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Ticks:</label>
+                <div class="col-sm-4">
+                    {{ form.ticks }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Session ID:</label>
+                <div class="col-sm-4">
+                    {{ form.session_id}}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Step Count:</label>
+                <div class="col-sm-4">
+                    {{ form.step_count }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Select Tick:</label>
+                <div class="col-sm-4">
+                    {{ form.select_tick}}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+{% endblock %}

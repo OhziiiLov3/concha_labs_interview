@@ -39,3 +39,5 @@ class AudioData(models.Model):
         return self.session_id
 
 
+class Meta:
+    db_table = 'concha_audio'

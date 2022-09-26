@@ -1,8 +1,8 @@
 from django.http import JsonResponse
 from django.shortcuts import render,redirect
-from .forms import AccountForm
+from .forms import AccountForm, AudioDataForm
 from .serializers import UserAccountSerializer
-from .models import UserAccount
+from .models import UserAccount, AudioData
 from rest_framework.decorators import api_view
 from rest_framework.response import Response 
 from rest_framework import status
@@ -62,6 +62,26 @@ def destroy(request, id):
     account.delete()
     return redirect("/show")
 
+# AUDIO DATA CRUD 
+
+
+def audio(request):
+    if request.method == "POST":
+        form = AudioDataForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('/audio')
+            except:
+                pass
+    else:
+        form = AudioDataForm()
+    return render(request, 'audio-index.html', {'form': form})
+
+
+def audio_show(request):
+    audio = AudioData.objects.all()
+    return render(request, "audio-show.html", {'audio': audio})
 
 
 
@@ -69,8 +89,7 @@ def destroy(request, id):
 
 
 
-
-
+# UNIT TEST
 
 # GET -> DATA FROM -> Return in JSON 
 # CREATE AND READ DATA

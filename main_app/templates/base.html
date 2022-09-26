@@ -15,7 +15,7 @@
 
 <body>
     <main>
-            <nav class="navbar" role="navigation">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="navbar_logo">
                     <img src="{% static 'images/conchalabs_iDentical+Logo+300.png' %}" alt="logo" class="navbar_img" width="100px"
                         height="100">
@@ -24,7 +24,8 @@
                 <h3 class="welcome">Welcome</h3>
                 <div class="navbar_links">
                     <a class="navbar-item" href="/show">Home</a>
-                    <a class="navbar-item" href="/useraccount">Create</a>
+                    <a class="navbar-item" href="/useraccount">User Accounts</a>
+                    <a class="navbar-item" href="/audio">Audio Data</a>
                     <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'search_accounts' %}">
                         {% csrf_token %}
 

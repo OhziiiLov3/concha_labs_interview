@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<body>
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="thead-dark">
+            <tr></tr>
+                <th>Ticks</th>
+                <th>Session_Id</th>
+                <th>Step Count</th>
+                <th>Session Ticks</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in audio %}
+            <tr>
+                <td>{{ data.ticks}}</td>
+                <td>{{ data.session_id }}</td>
+                <td>{{ data.step_count}}</td>
+                <td>{{ data.select_tick}}</td>
+               
+                <td>
+                    <a href="/edit/{{ data.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a>
+                    <a href="/delete/{{ data.id }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <center><a href="/useraccount" class="btn btn-primary">Add New Record</a></center>
+</body>
+
+</html>
+{% endblock %}
+
+
