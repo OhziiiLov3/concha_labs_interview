@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block head %} {% endblock %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Concha Lab Demo</title>
+</head>
+
+<body>
+    <main>
+        <section class="glass-container">
+            <nav class="navbar" role="navigation">
+                <div class="navbar_logo">
+                    <img src="{% static 'images/conchalabs_iDentical+Logo+300.png' %}" alt="logo" class="navbar_img" width="100px"
+                        height="100">
+                    <h1 class="webtitle">Concha Lab Demo </h1>
+                </div>
+                <h3 class="welcome">Welcome</h3>
+                <div class="navbar_links">
+                    <a class="navbar-item" href="/show">Home</a>
+                    <a class="navbar-item" href="/useraccount">Create</a>
+                </div>
+                </div>
+
+            </nav>
+            {% block content %}{% endblock %}
+        </section>
+    </main>
+
+</body>
+
+
+</html>

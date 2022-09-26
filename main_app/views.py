@@ -11,6 +11,10 @@ from rest_framework import status
 
 #  CREATE VIEWS
 
+def Home(request):
+    accounts = UserAccount.objects.all()
+    return render(request, "home.html", {'accounts': accounts})
+
 def useraccount(request):
     if request.method == "POST":
         form = AccountForm(request.POST)
@@ -35,11 +39,12 @@ def edit(request, id):
 
 
 def update(request, id):
-    account = UserAccount.objects.get(id=id)
-    form = AccountForm(request.POST, instance=account)
-    if form.is_valid():
-        form.save()
-        return redirect("/show")
+    if request.method == "POST":
+        account = UserAccount.objects.get(id=id)
+        form = AccountForm(request.POST, instance=account)
+        if form.is_valid():
+            form.save()
+            return redirect("/show")
     return render(request, 'edit.html', {'account': account})
 
 
