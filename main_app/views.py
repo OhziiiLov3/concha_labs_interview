@@ -26,12 +26,12 @@ def useraccount(request):
 
 def show(request):
     accounts = UserAccount.objects.all()
-    return render(request, "show.html", {'UserAccount': accounts})
+    return render(request, "show.html", {'accounts': accounts})
 
 
 def edit(request, id):
-    accounts = UserAccount.objects.get(id=id)
-    return render(request, 'edit.html', {'UserAccount': accounts})
+    account = UserAccount.objects.get(id=id)
+    return render(request, 'edit.html', {'account': account})
 
 
 def update(request, id):
@@ -40,7 +40,7 @@ def update(request, id):
     if form.is_valid():
         form.save()
         return redirect("/show")
-    return render(request, 'edit.html', {'UserAccount': accounts})
+    return render(request, 'edit.html', {'accounts': accounts})
 
 
 def destroy(request, id):

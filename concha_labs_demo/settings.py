@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',  # add Django restframework
     'corsheaders', 
-    'main_app.apps.MainAppConfig',  # add appiclation
+    'main_app',  # add appiclation
 ]
 
 CORS_ORIGIN_ALLOW_ALL = False
