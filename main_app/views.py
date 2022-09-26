@@ -48,13 +48,12 @@ def edit(request, id):
 
 
 def update(request, id):
-    if request.method == "POST":
-        account = UserAccount.objects.get(id=id)
-        form = AccountForm(request.POST, instance=account)
-        if form.is_valid():
-            form.save()
-            return redirect("/show")
-    return render(request, 'edit.html', {'account': account})
+    account = UserAccount.objects.get(id=id)
+    form = AccountForm(request.POST or None, instance=account)
+    if form.is_valid():
+        form.save()
+        return redirect('/show')
+    return render(request, 'edit.html', {'account': account, 'form':form})
 
 
 
