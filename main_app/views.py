@@ -43,6 +43,7 @@ def update(request, id):
     return render(request, 'edit.html', {'account': account})
 
 
+
 def destroy(request, id):
     account = UserAccount.objects.get(id=id)
     account.delete()

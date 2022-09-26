@@ -14,21 +14,25 @@
     <table class="table table-striped table-bordered table-sm">
         <thead class="thead-dark">
             <tr>
-                <th>User ID</th>
+                <th>ID</th>
+                <th>UserAccountID</th>
                 <th>User Name</th>
                 <th>User Email</th>
                 <th>User Address</th>
                 <th>Audio Data</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             {% for account in accounts %}
             <tr>
                 <td>{{ account.id }}</td>
+                <td>{{ account.userId }}</td>
                 <td>{{ account.name }}</td>
                 <td>{{ account.email }}</td>
                 <td>{{ account.address }}</td>
                 <td>{{ account.audio_data }}</td>
+                
                 <td>
                     <a href="/edit/{{ account.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a>
                     <a href="/delete/{{ account.id }}">Delete</a>
