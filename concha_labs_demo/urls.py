@@ -26,6 +26,7 @@ urlpatterns = [
     path('accounts/<int:id>', views.useraccount_detail),
     path('useraccount', views.useraccount, name='useraccount'),
     path('show', views.show),
+    path('search_accounts/', views.search_accounts, name='search_accounts'),
     path('edit/<int:id>', views.edit),
     path('update/<int:id>', views.update),
     path('delete/<int:id>', views.destroy),

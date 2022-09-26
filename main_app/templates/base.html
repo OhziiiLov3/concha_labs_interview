@@ -15,7 +15,6 @@
 
 <body>
     <main>
-        <section class="glass-container">
             <nav class="navbar" role="navigation">
                 <div class="navbar_logo">
                     <img src="{% static 'images/conchalabs_iDentical+Logo+300.png' %}" alt="logo" class="navbar_img" width="100px"
@@ -26,12 +25,17 @@
                 <div class="navbar_links">
                     <a class="navbar-item" href="/show">Home</a>
                     <a class="navbar-item" href="/useraccount">Create</a>
+                    <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'search_accounts' %}">
+                        {% csrf_token %}
+
+                        <input class="form-control mr-sm-2" type="search" name ="searched" placeholder="Search User Accounts" aria-label="Search">
+                        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                 </div>
                 </div>
 
             </nav>
             {% block content %}{% endblock %}
-        </section>
     </main>
 
 </body>

@@ -15,6 +15,15 @@ def Home(request):
     accounts = UserAccount.objects.all()
     return render(request, "home.html", {'accounts': accounts})
 
+
+def search_accounts(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        accounts = UserAccount.objects.filter(name__contains=searched)
+        return render(request, 'search_accounts.html',{'searched':searched,'accounts':accounts})
+    else:
+        return render(request, 'search_accounts.html', {})
+
 def useraccount(request):
     if request.method == "POST":
         form = AccountForm(request.POST)
