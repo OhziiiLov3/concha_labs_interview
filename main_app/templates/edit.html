@@ -11,22 +11,22 @@
 </head>
 
 <body>
-    <form method="POST" class="post-form" action="/update/{{account.userId}}">
+    <form method="POST" class="post-form" action="/update/{{account.id}}">
         {% csrf_token %} {{form.as_p}} {{form.errors}}
         <div class="container">
             <br>
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label"></label>
+                <label class=" col-sm-1 col-form-label"></label>
                 <div class="col-sm-4">
                     <h3>Update Details</h3>
                 </div>
             </div>
-            <div class="form-group row">
+            <!-- <div class="form-group row">
                 <label class="col-sm-2 col-form-label">UserId:</label>
                 <div class="col-sm-4">
-                    <input type="text" name="eid" id="id_id" required maxlength="20" value="{{ account.userId }}" />
+                    <input type="text" name="id" id="id_id" required maxlength="20" value="{{ account.id }}" />
                 </div>
-            </div>
+            </div> -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Name:</label>
                 <div class="col-sm-4">
@@ -46,6 +46,12 @@
                 <div class="col-sm-4">
                     <input type="text" name="address" id="id_contact" required maxlength="15"
                         value="{{ account.address }}" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Audio Data:</label>
+                <div class="col-sm-4">
+                    <textarea type="text" name="auto_data" id="id_auto_data" required maxlength="15" value="{{ account.audio_data }}">"{}"</textarea>
                 </div>
             </div>
             <div class="form-group row">

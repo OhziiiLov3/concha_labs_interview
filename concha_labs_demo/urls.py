@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', views.useraccount_list, name='accounts'),
     path('accounts/<int:id>', views.useraccount_detail),
-    path('useraccount', views.useraccount),
+    path('useraccount', views.useraccount, name='useraccount'),
     path('show', views.show),
     path('edit/<int:id>', views.edit),
     path('update/<int:id>', views.update),
