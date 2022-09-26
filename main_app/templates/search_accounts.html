@@ -8,7 +8,13 @@
 
  {% for account in accounts %}
 
- {{ account }} 
+ <h1>Result: <a href="{% url 'show' %}">{{ account }} - User Id: {{account.id}}</a> </h1>
+ <br>
+<ul>
+    <li>UserAccountId: {{account.userId}}</li>
+    <li>Address: {{account.address}}</li>
+    <li>Email: {{account.email}}</li>
+</ul>
  <br>
 
 
