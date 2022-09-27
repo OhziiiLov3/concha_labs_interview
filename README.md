@@ -186,8 +186,18 @@ class AudioData(models.Model):
         size=8,
     )
 ```
+I also had alot of fun with Creating the Update View and Form Validation with Django 
 
+## Update 
+![Screen Shot 2022-09-27 at 12 07 18 PM](https://user-images.githubusercontent.com/79301007/192614555-50c71531-f93b-418f-a6b8-25491d97ab78.png)
 
+## Form Validation 
+
+![Screen Shot 2022-09-27 at 12 10 04 PM](https://user-images.githubusercontent.com/79301007/192614777-8a213c40-a745-49a3-bb61-5c1077037d07.png) 
+
+## Search For User 
+
+![Screen Shot 2022-09-27 at 12 12 18 PM](https://user-images.githubusercontent.com/79301007/192615229-3c2bf79c-9f2e-4ab4-a25d-222bc3876ba9.png)
 
 
 
