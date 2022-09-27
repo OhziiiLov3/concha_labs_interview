@@ -8,7 +8,7 @@
 - The code should be saved to a git repository that can be pulled and run locally and uploaded to GCP to run remotely.
 
 # Solution
-This Repo is a solution that creates an API to store User Account Data into a database. To accomplish this I will be using Django(Python Webframework) and PostgreSQL to create my API's and Store the data. This project also includes Django's Restframework to test the connection between the Python appilcation and the Postgres database. I will also use Docker to package my appilcation's dependencies for local development. Finally The Dockerized Application with be pushed to GCP for Deployment
+This Repo is a solution that creates an API to store User Account Data into a database.To accomplish this, I will use Django(Python Web Framework) and PostgreSQL to create the APIs and Store the data in the database. This project also includes Django's Rest framework to test the connection between the Python application and the Postgres database. I will also use Docker to package my application’s dependencies for local development. Finally, The Dockerized Application with be pushed to GCP for Deployment
 
 # UserStory 
 - As a User I will be able to Create, Read, Update, and Delete User Accounts and Audio Data
