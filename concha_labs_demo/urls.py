@@ -35,4 +35,7 @@ urlpatterns = [
     # AUDIO CRUD
     path('audio', views.audio, name='audio'),
     path('show/audio', views. audio_show),
+    path('edit/audio/<int:id>', views.editaudio),
+    path('update/audio/<int:id>', views.updateaudio),
+    path('delete/audio/<int:id>', views.destroyaudio)
 ]

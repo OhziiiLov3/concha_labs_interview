@@ -84,6 +84,24 @@ def audio_show(request):
     return render(request, "audio-show.html", {'audio': audio})
 
 
+def editaudio(request, id):
+    audio = AudioData.objects.get(id=id)
+    return render(request, 'audio-edit.html', {'audio': audio})
+
+
+def updateaudio(request, id):
+    audio = AudioData.objects.get(id=id)
+    form = AudioDataForm(request.POST or None, instance=audio)
+    if form.is_valid():
+        form.save()
+        return redirect('/show/audio')
+    return render(request, 'audio-edit.html', {'audio': audio, 'form': form})
+
+
+def destroyaudio(request, id):
+    audio = AudioData.objects.get(id=id)
+    audio.delete()
+    return redirect('/show/audio')
 
 
 
