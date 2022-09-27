@@ -10,6 +10,21 @@
 # Solution
 This Repo is a solution that creates an API to store User Account Data into a database. To accomplish this I will be using Django(Python Webframework) and PostgreSQL to create my API's and Store the data. This project also includes Django's Restframework to test the connection between the Python appilcation and the Postgres database. I will also use Docker to package my appilcations dependencies for local development. Finally The Dockerized Appilcation with be pushed to GCP for Deployment
 
+# UserStory 
+- As a User I will be able to Create, Read, Update, and Delete User Accounts and Audio Data
+- User can upload image and insert Json Formatted Data
+- As a User I will be able to Search User Accounts
+- As an Admin I will be able to Create, Read, Update, and Delete User Accounts and Audio Data
+
+# Techincal Requirements
+- Create and Run Server
+- Make API Request 
+- Create Database 
+- Form valdation 
+- unit test 
+- Dockerize Application
+- Deploy on GCP
+
 # LOCAL BUILD, RUN, and TEST
 
 - Fork and Clone repo
@@ -80,6 +95,8 @@ Next createsuperuser to add data to the admin page
 
 <http://0.0.0.0:8000/admin/>
 
+![Screen Shot 2022-09-27 at 11 27 03 AM](https://user-images.githubusercontent.com/79301007/192607014-0ff3f9c0-bcbf-4fa1-a091-b1fd3b65026f.png)
+
 ## Test 
 
 Now that we have the Appilcation up and runnning, Lets add some users to the application. If we head to <http://0.0.0.0:8000/accounts/1> We can see the data Serialziered into JSON using Django's RESTFramework. This enables us to see that API is working. We are able to Create, Read, Update, and Delete Our Users 
@@ -120,7 +137,33 @@ Now Run `docker images`
 
 # Push to GCP
 
-We can now push our Docker image to the Google Contai
+We can now push our Docker image to the Google Container Registry
+
+`docker push gcr.io/PROJECT-ID/USERNAME/DOCKER_IMAGE:tag .`
+
+I used 
+ 
+`docker push gcr.io/conchalabsdemo-363805/kbaskerville/concha_labs_interview_web:gcp`
+
+Lets head to the GCP console to see if our Docker Image was pushed. 
+
+![](https://user-images.githubusercontent.com/79301007/192604579-1e7ffdb2-42f7-45d5-ba3b-e385a164dc03.png)
+
+We can now Deploy our Docker Image on GCP! 
+![](https://user-images.githubusercontent.com/79301007/192604780-24c6e8e7-f53b-4d1b-a806-f01b1a14cd94.png)
+
+# Overview 
+
+Lets Recap what we accomlpished! In this Repo we were able to create a Docker contianer for our Python-Django Appilcation, Build and Push the Docker Container to Docker's Private repo, Pull Docker conatinerfrom DockerHub repo to ship the appilcation, and build and pushed our Docker Image to GCP's Cloud Contaier Registry for deployment.
+
+Thank you for following along! 
+
+# Code Snippets 
+
+In this section I am highlighting some of my favorite pieces of code that I used to help me accomlish this project
+
+
+
 
 
 
