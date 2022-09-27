@@ -8,7 +8,7 @@
 - The code should be saved to a git repository that can be pulled and run locally and uploaded to GCP to run remotely.
 
 # Solution
-This Repo is a solution that creates an API to store User Account Data into a database. To accomplish this I will be using Django(Python Webframework) and PostgreSQL to create my API's and Store the data. This project also includes Django's Restframework to test the connection between the Python appilcation and the Postgres database. I will also use Docker to package my appilcations dependencies for local development. Finally The Dockerized Appilcation with be pushed to GCP for Deployment
+This Repo is a solution that creates an API to store User Account Data into a database. To accomplish this I will be using Django(Python Webframework) and PostgreSQL to create my API's and Store the data. This project also includes Django's Restframework to test the connection between the Python appilcation and the Postgres database. I will also use Docker to package my appilcation's dependencies for local development. Finally The Dockerized Application with be pushed to GCP for Deployment
 
 # UserStory 
 - As a User I will be able to Create, Read, Update, and Delete User Accounts and Audio Data
@@ -160,9 +160,32 @@ Thank you for following along!
 
 # Code Snippets 
 
-In this section I am highlighting some of my favorite pieces of code that I used to help me accomlish this project
+In this section I am highlighting some of my favorite pieces of code that I used to help me accomplish this project
 
+In the `models.py` file I added Django's JSONField() to the UserAccount Model. This was super helpful to store the JSON formatted data from the User. 
 
+```
+class UserAccount(models.Model):
+    userId = models.CharField(max_length=20)
+    name = models.CharField(max_length=150)
+    email = models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
+    image =  models.ImageField(null=True,blank=True)
+    audio_data = models.JSONField(default='{}')
+```
+
+I also used ArrayField() to store list inside the Django Model
+
+``` 
+class AudioData(models.Model):
+    ticks = ArrayField(
+        ArrayField(
+            models.CharField(max_length=15, blank=True),
+            size=8,
+        ),
+        size=8,
+    )
+```
 
 
 
