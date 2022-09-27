@@ -1,8 +1,18 @@
-# syntax=docker/dockerfile:1
-FROM python:3
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
+# Pull base image
+FROM python:3.10.2-slim-bullseye
+
+# Set environment variables
+ENV PIP_DISABLE_PIP_VERSION_CHECK 1
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+EXPOSE 8000
+
+# Set work directory
 WORKDIR /code
-COPY requirements.txt /code/
+
+# Install dependencies
+COPY ./requirements.txt .
 RUN pip install -r requirements.txt
-COPY . /code/
+
+# Copy project
+COPY . .
